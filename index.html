@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f54fd1cae9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Check the weather</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <form id="search-city">
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group" >
+                <input
+                  class="form-control"
+                  type="text"
+                  id="city-input"
+                  placeholder="Search for your city..."
+                />
+              </div>
+            </div>
+            <div class="col-md-auto">
+              <button type="submit">Check</button>
+              
+            </div> 
+            
+         </form>
+         <div class="col-md-auto">
+           <button id = "geolocation">
+             Location📍
+           </button></div>
+            <div class="col">
+              <div class="form-group mb-2" id="current-date">
+                Sunday, May 24th 2020
+              </div>
+            </div>
+          </div>
+      
+
+        <div class="row">
+          <div class="col-sm-8">
+            <h1>
+              Amsterdam,NL
+            </h1>
+            <h3 class="weather" id="weather-now">Sunny, with Clear sky</h3>
+<h2>1°C</h2>
+ <h6 id="precepitation-input"> Precipitation: </h6>
+<h6 id="wind-input"> Wind: </h6>
+         <h6 id="humidity-input"> Humidity: </h6> 
+                   
+          </div>
+        
+            
+        
+          <div class="col-sm-4">
+            <img src="img/sunfull.png" class="card-img-top" height="220px" />
+          </div>
+        </div>
+      </header>
+      <footer>
+        <div class="row">
+          <div class="col">
+            <img src="img/sun.png" class="card-img-top" height="80px" />
+            <h3 class="Sunday">MON</h3>
+            <h4>June 1</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/suncloud.png" class="card-img-top" height="80px" />
+            <h3>TUE</h3>
+            <h4>June 2</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/rain.png" class="card-img-top" height="80px" />
+            <h3>WED</h3>
+            <h4>June 3</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/rain.png" class="card-img-top" height="80px" />
+            <h3>THU</h3>
+            <h4>June 4</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/suncloud.png" class="card-img-top" height="80px" />
+            <h3>FRI</h3>
+            <h4>June 5</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/suncloud.png" class="card-img-top" height="80px" />
+            <h3>SAT</h3>
+            <h4>June 6</h4>
+            <p>22°C/15°C</p>
+          </div>
+          <div class="col">
+            <img src="img/sunfull.png" class="card-img-top" height="80px" />
+            <h3>SUN</h3>
+            <h4>June 7</h4>
+            <p>22°C/15°C</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="scrypt.js"></script>
+  </body>
+</html>
