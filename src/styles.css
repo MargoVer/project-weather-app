@@ -74,3 +74,8 @@ h4 {
 p {
   margin-left: 15px;
 }
+.coder {
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-weight: bold;
+}
