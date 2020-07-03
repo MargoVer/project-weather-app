@@ -63,6 +63,7 @@ h2 {
 
 .weather {
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 h3 {

@@ -53,8 +53,13 @@ function showWeather(response) {
   let h2 = document.querySelector("h2");
   let tempCelsius = Math.round(response.data.main.temp);
   let weatherConditions = document.querySelector("#weather-now");
+  let humidityInput = document.querySelector("#humidity");
+  let windInput = document.querySelector("#wind");
+
   locationNow.innerHTML = `${response.data.name}`;
   h2.innerHTML = `${tempCelsius}°C`;
+  humidityInput.innerHTML = response.data.main.humidity;
+  windInput.innerHTML = Math.round(response.data.wind.speed);
 
   weatherConditions.innerHTML = response.data.weather[0].description;
 }
