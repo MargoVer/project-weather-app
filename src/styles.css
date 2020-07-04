@@ -49,8 +49,7 @@ form {
 }
 h1,
 h2,
-h3,
-h6 {
+h3 {
   margin-left: 20px;
 }
 h1 {
@@ -58,7 +57,11 @@ h1 {
   font-size: 250%;
 }
 h2 {
-  font-size: 300%;
+  font-size: 400%;
+}
+h6 {
+  margin-top: 10px;
+  margin-left: 40px;
 }
 
 .weather {
