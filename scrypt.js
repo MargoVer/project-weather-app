@@ -63,18 +63,29 @@ function showWeather(response) {
 
   weatherConditions.innerHTML = response.data.weather[0].description;
 }
+//display forecast
 
-//add a search engine
-function place(event) {
-  event.preventDefault();
-
-  let currentLocation = document.querySelector("#city-input");
-  let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentLocation.value}&appid=${apiKey}&units=metric`;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `${currentLocation.value}`;
-  axios.get(apiUrl).then(showWeather);
+function showForecast(response) {
+  console.log(response.data);
 }
 
+//add a search engine
+function search(city) {
+  let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+function place(event) {
+  event.preventDefault();
+  let currentLocation = document.querySelector("#city-input");
+  search(currentLocation.value);
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = `${currentLocation.value}`;
+}
+
+search("Haarlem");
 let town = document.querySelector("#search-city");
 town.addEventListener("submit", place);
