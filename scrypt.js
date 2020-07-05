@@ -66,7 +66,19 @@ function showWeather(response) {
 //display forecast
 
 function showForecast(response) {
-  console.log(response.data);
+  let forecastHourly = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+  console.log(forecast);
+  forecastHourly.innerHTML = `
+   <div class="col">
+   <h3 class="sunday"> 12:00 </h3>
+            <img src="img/sun.png" class="images" height="80px" width="80px" />
+             <h4> <strong> ${Math.round(
+               forecast.main.temp_max
+             )}°C </strong>/${Math.round(forecast.main.temp_min)}°C</h4>
+            <p>${forecast.weather[0].description}light rain</p>
+           
+          </div>`;
 }
 
 //add a search engine
