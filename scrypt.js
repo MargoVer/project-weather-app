@@ -31,6 +31,20 @@ let month = months[now.getMonth()];
 let year = now.getFullYear();
 data.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
+//get right time format for forecast
+function hoursForecast(timestamp) {
+  let time = new Date(timestamp);
+  let hours = time.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 //get current position - geolocation
 function positionNow(position) {
   let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
@@ -71,7 +85,7 @@ function showForecast(response) {
   console.log(forecast);
   forecastHourly.innerHTML = `
    <div class="col">
-   <h3 class="sunday"> 12:00 </h3>
+   <h3 class="sunday"> ${hoursForecast(forecast.dt * 1000)}</h3>
             <img src="img/sun.png" class="images" height="80px" width="80px" />
              <h4> <strong> ${Math.round(
                forecast.main.temp_max
