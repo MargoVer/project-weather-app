@@ -1,21 +1,19 @@
 .container {
-  background-color: #cfc7e4;
+  background-image: url("https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80");
   max-width: 800px;
   margin: 0 auto;
   margin-top: 20px;
   padding: 10px 10px;
   border-radius: 10px;
-  font-family: "Indie Flower", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: bold;
 }
 header {
-  background-image: url("https://images.unsplash.com/photo-1517639493569-5666a7b2f494?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80");
   border: rgba(76, 141, 159, 0.6);
   border-radius: 10px 10px 5px 5px;
   padding-top: 10px;
 }
 footer {
-  background-image: linear-gradient(-225deg, #cbbacc 0%, #8eb3d7 100%);
   border: rgba(76, 141, 159, 0.6);
   border-radius: 5px 5px 10px 10px;
   margin-top: 10px;
@@ -60,16 +58,19 @@ h2 {
   font-size: 400%;
 }
 h6 {
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 12px;
+  margin-left: 65px;
 }
 
 .weather:first-letter {
   text-transform: capitalize;
 }
-h3 {
+.sunday {
   margin-top: 15px;
   margin-bottom: -10px;
+}
+.weather {
+  margin-top: -10px;
 }
 h4 {
   margin-left: 10px;
@@ -81,10 +82,15 @@ p {
 }
 .coder {
   text-align: center;
-  font-family: "Indie Flower", cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: bold;
 }
 
 .images {
   margin-left: 10px;
+}
+
+h4,
+p {
+  margin-right: -20px;
 }

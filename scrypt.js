@@ -81,9 +81,13 @@ function showWeather(response) {
 
 function showForecast(response) {
   let forecastHourly = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
-  console.log(forecast);
-  forecastHourly.innerHTML = `
+  forecastHourly.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+
+    forecastHourly.innerHTML += `
    <div class="col">
    <h3 class="sunday"> ${hoursForecast(forecast.dt * 1000)}</h3>
             <img src="img/sun.png" class="images" height="80px" width="80px" />
@@ -93,6 +97,7 @@ function showForecast(response) {
             <p>${forecast.weather[0].description}light rain</p>
            
           </div>`;
+  }
 }
 
 //add a search engine
