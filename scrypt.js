@@ -84,7 +84,7 @@ function showForecast(response) {
   forecastHourly.innerHTML = null;
   let forecast = null;
 
-  for (let index = 0; index < 5; index++) {
+  for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
 
     forecastHourly.innerHTML += `
@@ -93,8 +93,10 @@ function showForecast(response) {
             <img src="img/sun.png" class="images" height="80px" width="80px" />
              <h4> <strong> ${Math.round(
                forecast.main.temp_max
-             )}°C </strong>/${Math.round(forecast.main.temp_min)}°C</h4>
-            <p>${forecast.weather[0].description}light rain</p>
+             )}°C </strong>/<span class="temper"> ${Math.round(
+      forecast.main.temp_min
+    )}°C </span> </h4>
+            <p>${forecast.weather[0].description}</p>
            
           </div>`;
   }
