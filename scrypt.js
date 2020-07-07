@@ -29,7 +29,19 @@ let months = [
 let month = months[now.getMonth()];
 
 let year = now.getFullYear();
-data.innerHTML = `${day}, ${month} ${date}, ${year}`;
+
+let hours = now.getHours();
+
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+let minutes = now.getMinutes();
+
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+
+data.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
 
 //get right time format for forecast
 function hoursForecast(timestamp) {
@@ -44,22 +56,6 @@ function hoursForecast(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
-
-//get current position - geolocation
-function positionNow(position) {
-  let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=${apiKey}`;
-
-  axios.get(url).then(showWeather);
-}
-function getCurrentPosition() {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(positionNow);
-}
-let buttonLocation = document.querySelector("#geolocation");
-buttonLocation.addEventListener("click", getCurrentPosition);
 
 //show current weather
 function showWeather(response) {
