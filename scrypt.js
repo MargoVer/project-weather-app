@@ -73,7 +73,7 @@ function showWeather(response) {
   weatherConditions.innerHTML = response.data.weather[0].description;
 }
 //display icon
-function showIcon(response) {
+function changeImage() {
   let iconCondition = document.querySelector("#condition");
   let weatherImage = response.data.weather[0].icon;
   console.log(response.data.weather[0].icon);
@@ -81,6 +81,11 @@ function showIcon(response) {
     iconCondition.setAttribute(
       "src",
       `https://b1.pngbarn.com/png/940/787/weezle-weather-icons-weezle-sun-png-clip-art.png`
+    );
+  } else {
+    iconCondition.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
     );
   }
 }
