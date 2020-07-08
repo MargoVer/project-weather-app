@@ -70,8 +70,19 @@ function showWeather(response) {
   h2.innerHTML = `${tempCelsius}°C`;
   humidityInput.innerHTML = response.data.main.humidity;
   windInput.innerHTML = Math.round(response.data.wind.speed);
-
   weatherConditions.innerHTML = response.data.weather[0].description;
+}
+//display icon
+function showIcon(response) {
+  let iconCondition = document.querySelector("#condition");
+  let weatherImage = response.data.weather[0].icon;
+  console.log(response.data.weather[0].icon);
+  if (weatherImage === "10d") {
+    iconCondition.setAttribute(
+      "src",
+      `https://b1.pngbarn.com/png/940/787/weezle-weather-icons-weezle-sun-png-clip-art.png`
+    );
+  }
 }
 //display forecast
 
