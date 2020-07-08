@@ -28,14 +28,18 @@ button {
 
   background: #c5a4af;
   border-radius: 5px;
+}
+.btn {
+  color: #c5a4af;
+  border: solid;
+  border-width: thin;
+  border-color: #e0e0e0;
+}
+.btn:hover {
+  background-color: #c5a4af;
   border-color: #c5a4af;
 }
-.geolocation {
-  padding: 5px;
-  margin-left: -15px;
-  border-radius: 5px;
-  background: #99b5d6;
-}
+
 form {
   margin-top: 10px;
   margin-left: 10px;
