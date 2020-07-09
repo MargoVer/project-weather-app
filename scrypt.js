@@ -120,15 +120,17 @@ function showForecast(response) {
     forecastHourly.innerHTML += `
    <div class="col">
    <h3 class="sunday"> ${hoursForecast(forecast.dt * 1000)}</h3>
-<img
-      src=""
-      alt=""
+
+
+${changeForecastimage(response.forecast.weather[0].icon)}
+<img 
+       srs="img/snow2"
       id="weatherpic"
       class="images"
       height="80px"
       width="80px"
-    />;
- changeForecastimage(response.forecast.weather[0].icon);
+    
+  /> 
  
             
              <h4> <strong> ${Math.round(

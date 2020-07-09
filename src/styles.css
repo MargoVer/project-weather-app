@@ -94,7 +94,8 @@ p {
 }
 
 .images {
-  margin-left: 10px;
+  margin-left: 15px;
+  margin-top: -10px;
 }
 .card-img-top {
   margin-left: -40px;
