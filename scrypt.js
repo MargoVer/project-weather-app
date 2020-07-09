@@ -66,6 +66,7 @@ function showWeather(response) {
   let humidityInput = document.querySelector("#humidity");
   let windInput = document.querySelector("#wind");
 
+  changeImage(response.data.weather[0].icon);
   locationNow.innerHTML = `${response.data.name}`;
   h2.innerHTML = `${tempCelsius}°C`;
   humidityInput.innerHTML = response.data.main.humidity;
@@ -73,19 +74,36 @@ function showWeather(response) {
   weatherConditions.innerHTML = response.data.weather[0].description;
 }
 //display icon
-function changeImage() {
+function changeImage(icon) {
   let iconCondition = document.querySelector("#condition");
-  let weatherImage = response.data.weather[0].icon;
-  console.log(response.data.weather[0].icon);
-  if (weatherImage === "10d") {
-    iconCondition.setAttribute(
-      "src",
-      `https://b1.pngbarn.com/png/940/787/weezle-weather-icons-weezle-sun-png-clip-art.png`
-    );
+  if (icon === "01d") {
+    iconCondition.setAttribute("src", `img/sunfull.png`);
+  } else if (icon === "02d") {
+    iconCondition.setAttribute("src", `img/suncloud.png`);
+  } else if (icon === "03d" || icon === "03n") {
+    iconCondition.setAttribute("src", `img/rain.png`);
+  } else if (icon === "04d" || icon === "04n") {
+    iconCondition.setAttribute("src", `img/cloud.png`);
+  } else if (icon === "09d" || icon === "09n") {
+    iconCondition.setAttribute("src", `img/rain.png`);
+  } else if (icon === "10d") {
+    iconCondition.setAttribute("src", `img/sunrain2.png`);
+  } else if (icon === "11d" || icon === "11n") {
+    iconCondition.setAttribute("src", `img/thunder.png`);
+  } else if (icon === "13d" || icon === "13n") {
+    iconCondition.setAttribute("src", `img/snow2.png`);
+  } else if (icon === "50d" || icon === "50n") {
+    iconCondition.setAttribute("src", `img/mist.png`);
+  } else if (icon === "01n") {
+    iconCondition.setAttribute("src", `img/moon.png`);
+  } else if (icon === "02n") {
+    iconCondition.setAttribute("src", `img/mooncloud.png`);
+  } else if (icon === "10n") {
+    iconCondition.setAttribute("src", `img/moonrain.png`);
   } else {
     iconCondition.setAttribute(
       "src",
-      `http://openweathermap.org/img/wn/${weatherImage}@2x.png`
+      `http://openweathermap.org/img/wn/${icon}@2x.png`
     );
   }
 }
@@ -102,7 +120,17 @@ function showForecast(response) {
     forecastHourly.innerHTML += `
    <div class="col">
    <h3 class="sunday"> ${hoursForecast(forecast.dt * 1000)}</h3>
-            <img src="img/sun.png" class="images" height="80px" width="80px" />
+<img
+      src=""
+      alt=""
+      id="weatherpic"
+      class="images"
+      height="80px"
+      width="80px"
+    />;
+ changeForecastimage(response.forecast.weather[0].icon);
+ 
+            
              <h4> <strong> ${Math.round(
                forecast.main.temp_max
              )}°C </strong>/<span class="temper"> ${Math.round(
@@ -113,7 +141,18 @@ function showForecast(response) {
           </div>`;
   }
 }
-
+//forecast icon
+function changeForecastimage(iconfor) {
+  let iconforecast = document.querySelector("#weatherpic");
+  if (iconfor === "01d") {
+    iconforecast.setAttribute("src", `img/sunfull.png`);
+  } else {
+    iconforecast.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${iconfor}@2x.png`
+    );
+  }
+}
 //add a search engine
 function search(city) {
   let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
