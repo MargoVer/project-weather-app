@@ -122,16 +122,13 @@ function showForecast(response) {
    <h3 class="sunday"> ${hoursForecast(forecast.dt * 1000)}</h3>
 
 
-${changeForecastimage(response.forecast.weather[0].icon)}
-<img 
-       srs="img/snow2"
+  <img
+       srs="${changeForecastimage(response.forecast.weather[0].icon)}"
       id="weatherpic"
       class="images"
       height="80px"
       width="80px"
-    
   /> 
- 
             
              <h4> <strong> ${Math.round(
                forecast.main.temp_max
@@ -147,7 +144,7 @@ ${changeForecastimage(response.forecast.weather[0].icon)}
 function changeForecastimage(iconfor) {
   let iconforecast = document.querySelector("#weatherpic");
   if (iconfor === "01d") {
-    iconforecast.setAttribute("src", `img/sunfull.png`);
+    iconforecast.setAttribute("src", `img / sunfull.png`);
   } else {
     iconforecast.setAttribute(
       "src",
@@ -155,6 +152,7 @@ function changeForecastimage(iconfor) {
     );
   }
 }
+
 //add a search engine
 function search(city) {
   let apiKey = "b1f3a8a2d9fc90849bbd1b29224fc8ef";
@@ -175,3 +173,12 @@ function place(event) {
 search("Haarlem");
 let town = document.querySelector("#search-city");
 town.addEventListener("submit", place);
+
+//<img
+//src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+//id="weatherpic"
+//class="images"
+//height="80px"
+//width="80px"
+
+///>

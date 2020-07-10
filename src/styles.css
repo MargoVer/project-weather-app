@@ -8,18 +8,20 @@
   font-family: "Dancing Script", cursive;
   font-weight: bold;
 }
+
 header {
   border: rgba(76, 141, 159, 0.6);
   border-radius: 10px 10px 5px 5px;
   padding-top: 10px;
 }
 footer {
-  border: rgba(76, 141, 159, 0.6);
+  border: #e0e0e0;
   border: solid;
   border-width: thin;
   border-color: #e0e0e0;
   border-radius: 5px 5px 10px 10px;
   margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 button {
   padding: 5px;
