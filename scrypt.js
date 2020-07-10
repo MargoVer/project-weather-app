@@ -123,7 +123,7 @@ function showForecast(response) {
 
 
   <img
-       srs="${changeForecastimage(response.forecast.weather[0].icon)}"
+       src="${changeForecastimage(forecast.weather[0].icon)}"
       id="weatherpic"
       class="images"
       height="80px"
@@ -146,10 +146,7 @@ function changeForecastimage(iconfor) {
   if (iconfor === "01d") {
     iconforecast.setAttribute("src", `img / sunfull.png`);
   } else {
-    iconforecast.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${iconfor}@2x.png`
-    );
+    iconforecast.setAttribute("src", `img / cloud.png`);
   }
 }
 
