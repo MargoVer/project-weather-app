@@ -123,7 +123,7 @@ function showForecast(response) {
 
 
   <img
-       src="${changeForecastimage(forecast.weather[0].icon)}"
+       src="${changeForecastImage(forecast.weather[0].icon)}"
       id="weatherpic"
       class="images"
       height="80px"
@@ -141,12 +141,33 @@ function showForecast(response) {
   }
 }
 //forecast icon
-function changeForecastimage(iconfor) {
-  let iconforecast = document.querySelector("#weatherpic");
-  if (iconfor === "01d") {
-    iconforecast.setAttribute("src", `img / sunfull.png`);
+function changeForecastImage(iconfor) {
+  if (iconfor == "01d") {
+    return "img/sunfull.png";
+  } else if (iconfor === "02d") {
+    return "img/suncloud.png";
+  } else if (iconfor === "03d" || iconfor === "03n") {
+    return "img/rain.png";
+  } else if (iconfor === "04d" || iconfor === "04n") {
+    return "img/cloud.png";
+  } else if (iconfor === "09d" || iconfor === "09n") {
+    return "img/rain.png";
+  } else if (iconfor === "10d") {
+    return "img/sunrain2.png";
+  } else if (iconfor === "11d" || iconfor === "11n") {
+    return "img/thunder.png";
+  } else if (iconfor === "13d" || iconfor === "13n") {
+    return "img/snow2.png";
+  } else if (iconfor === "50d" || iconfor === "50n") {
+    return "img/mist.png";
+  } else if (iconfor === "01n") {
+    return "img/moon.png";
+  } else if (iconfor === "02n") {
+    return "img/mooncloud.png";
+  } else if (iconfor === "10n") {
+    return "img/moonrain.png";
   } else {
-    iconforecast.setAttribute("src", `img / cloud.png`);
+    return "img/cloud.png";
   }
 }
 
