@@ -81,9 +81,9 @@ function changeImage(icon) {
   } else if (icon === "02d") {
     iconCondition.setAttribute("src", `img/suncloud.png`);
   } else if (icon === "03d" || icon === "03n") {
-    iconCondition.setAttribute("src", `img/rain.png`);
-  } else if (icon === "04d" || icon === "04n") {
     iconCondition.setAttribute("src", `img/cloud.png`);
+  } else if (icon === "04d" || icon === "04n") {
+    iconCondition.setAttribute("src", `img/brokencloud.png`);
   } else if (icon === "09d" || icon === "09n") {
     iconCondition.setAttribute("src", `img/rain.png`);
   } else if (icon === "10d") {
@@ -147,9 +147,9 @@ function changeForecastImage(iconfor) {
   } else if (iconfor === "02d") {
     return "img/suncloud.png";
   } else if (iconfor === "03d" || iconfor === "03n") {
-    return "img/rain.png";
-  } else if (iconfor === "04d" || iconfor === "04n") {
     return "img/cloud.png";
+  } else if (iconfor === "04d" || iconfor === "04n") {
+    return "img/brokencloud.png";
   } else if (iconfor === "09d" || iconfor === "09n") {
     return "img/rain.png";
   } else if (iconfor === "10d") {
@@ -191,12 +191,3 @@ function place(event) {
 search("Haarlem");
 let town = document.querySelector("#search-city");
 town.addEventListener("submit", place);
-
-//<img
-//src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
-//id="weatherpic"
-//class="images"
-//height="80px"
-//width="80px"
-
-///>
